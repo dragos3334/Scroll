@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_movie_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.dragos.scroll.MovieDetails">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/wrap">
+
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/title"
+            android:text="Capitain america"
+            android:textSize="30sp"
+            android:textColor="@color/textColor"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="13dp" />
+
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="230dp"
+            android:id="@+id/movie_poster"
+            android:src="@android:color/holo_orange_light"
+            android:layout_below="@+id/title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="26dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/vote"
+            android:text="6.8"
+            android:textSize="55sp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/textColor"
+            android:layout_below="@+id/movie_poster"
+            android:layout_alignRight="@+id/fix_description"
+            android:layout_alignEnd="@+id/fix_description" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fix_vote"
+            android:text="/10"
+            android:textSize="20sp"
+            android:layout_alignBaseline="@+id/vote"
+            android:layout_alignBottom="@+id/vote"
+            android:textColor="@color/textColor"
+            android:layout_toRightOf="@+id/vote"
+            android:layout_toEndOf="@+id/vote" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textStyle="bold"
+            android:id="@+id/fix_description"
+            android:layout_below="@+id/fix_vote"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/textColor"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fix_description"
+            android:id="@+id/description"
+            android:textColor="@color/textColor"
+            android:text="fdi fdffiv bif ibivfbdvh bla bla bla"
+            android:paddingBottom="40dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true" />
+
+
+
+
+    </RelativeLayout>
+</ScrollView>

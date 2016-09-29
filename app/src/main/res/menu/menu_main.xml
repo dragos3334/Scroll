@@ -1,0 +1,114 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.dragos.scroll.MainActivity">
+
+    <item
+        android:id="@+id/action_select"
+        android:orderInCategory="100"
+        android:title="@string/action"
+        app:showAsAction="never" />
+
+    <item
+        android:orderInCategory="100"
+        android:title="@string/adventure"
+        app:showAsAction="never"
+        android:id="@+id/adventure_select" />
+
+    <item
+        android:orderInCategory="100"
+        android:title="@string/animation"
+        android:id="@+id/animation_select" />
+    <item
+        android:orderInCategory="100"
+        android:title="@string/comedy"
+        app:showAsAction="never"
+        android:id="@+id/comedy_select" />
+
+    <item
+        android:orderInCategory="100"
+        android:title="@string/crime"
+        android:id="@+id/crime_select" />
+
+    <item
+        android:orderInCategory="100"
+        android:title="@string/documentary"
+        android:id="@+id/documentary_select" />
+    <item
+        android:orderInCategory="100"
+        android:title="@string/drama"
+        app:showAsAction="never"
+        android:id="@+id/drama_select" />
+
+    <item
+        android:orderInCategory="100"
+        android:title="@string/family"
+        android:id="@+id/family_select" />
+
+    <item
+        android:orderInCategory="100"
+        android:title="@string/fantasy"
+        app:showAsAction="never"
+        android:id="@+id/fantasy_select" />
+
+    <item
+        android:orderInCategory="100"
+        android:title="@string/history"
+        android:id="@+id/history_select" />
+
+    <item
+        android:orderInCategory="100"
+        android:title="@string/horror"
+        app:showAsAction="never"
+        android:id="@+id/horror_select" />
+
+    <item
+        android:orderInCategory="100"
+        android:title="@string/music"
+        app:showAsAction="never"
+        android:id="@+id/music_select" />
+
+    <item
+        android:orderInCategory="100"
+        android:title="@string/mystery"
+        app:showAsAction="never"
+        android:id="@+id/mystery_select" />
+
+    <item
+        android:orderInCategory="100"
+        android:title="@string/romance"
+        app:showAsAction="never"
+        android:id="@+id/romance_select" />
+
+    <item
+        android:orderInCategory="100"
+        android:title="@string/science_fiction"
+        app:showAsAction="never"
+        android:id="@+id/sciencefiction_select" />
+
+    <item
+        android:orderInCategory="100"
+        android:title="@string/tv_movie"
+        app:showAsAction="never"
+        android:id="@+id/tvmovie_select" />
+
+    <item
+        android:orderInCategory="100"
+        android:title="@string/thriller"
+        app:showAsAction="never"
+        android:id="@+id/thriller_select" />
+
+    <item
+        android:orderInCategory="100"
+        android:title="@string/war"
+        app:showAsAction="never"
+        android:id="@+id/war_select" />
+
+    <item
+        android:orderInCategory="100"
+        android:title="@string/western"
+        app:showAsAction="never"
+        android:id="@+id/western_select" />
+
+
+</menu>
