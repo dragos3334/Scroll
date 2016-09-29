@@ -9,6 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:divider="#BDBDBD"
-        android:dividerHeight="10px"
+        android:dividerHeight="3dp"
         android:id="@+id/movie_list"/>
 </RelativeLayout>
