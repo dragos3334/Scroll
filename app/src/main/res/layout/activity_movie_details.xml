@@ -77,7 +77,7 @@
             android:layout_below="@id/fix_description"
             android:id="@+id/description"
             android:textColor="@color/textColor"
-            android:text="fdi fdffiv bif ibivfbdvh bla bla bla"
+            android:text="bla bla bla"
             android:paddingBottom="40dp"
             android:layout_alignParentBottom="true"
             android:gravity="center"
