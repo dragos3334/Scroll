@@ -1,5 +1,7 @@
 package com.example.dragos.scroll;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -12,15 +14,6 @@ import java.util.List;
 
 public class MovieDetails extends AppCompatActivity {
 
-    private ImageView imageView;
-    private TextView title;
-    private TextView description;
-    private TextView vote;
-    private int positionItem;
-    private ArrayAdapter arrayAdapter;
-    private Movie movie;
-    private String stringdouble;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,26 +22,25 @@ public class MovieDetails extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
 
-        imageView=(ImageView) findViewById(R.id.movie_poster);
-        title=(TextView)findViewById(R.id.title);
-        description=(TextView)findViewById(R.id.description);
-        vote=(TextView)findViewById(R.id.vote);
+        ImageView imageView = (ImageView) findViewById(R.id.movie_poster);
+        TextView title = (TextView) findViewById(R.id.title);
+        TextView description = (TextView) findViewById(R.id.description);
+        TextView vote = (TextView) findViewById(R.id.vote);
+        Bundle extras = getIntent().getExtras();
+        Intent intent= getIntent();
 
-        positionItem= MainActivity.positionInList;
-
-
-        arrayAdapter= MainActivity.adapter;
-        movie= (Movie) arrayAdapter.getItem(positionItem);
-        imageView.setImageBitmap(movie.getBitmap());
+        Movie movie = extras.getParcelable("MY_MOVIE_OBJECT");
+        imageView.setImageBitmap((Bitmap)intent.getParcelableExtra("BITMAP"));
 
         title.setText(movie.getTitle());
 
-        stringdouble= Double.toString(movie.getVoteAverage());
+        String stringdouble = Double.toString(movie.getVoteAverage());
         vote.setText(stringdouble);
+
         if(movie.getDescription().equals("")){
             description.setText(R.string.noDescription);
-        }else{description.setText(movie.getDescription());}
-
+        }else{
+            description.setText(movie.getDescription());}
 
     }
 }

@@ -2,10 +2,12 @@ package com.example.dragos.scroll;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,32 +22,37 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Movie> movieList;
-    public static ArrayAdapter adapter;
+    private ArrayAdapter adapter;
     private ListView listView;
-    public  static int positionInList;
+    private Intent intent;
     public static final String IMAGE_URL="https://image.tmdb.org/t/p/w154";
     public static final String API_KEY= "&api_key=c4ecdfbf483df6da50ee828803c75746";
-    private final String actionURL= "https://api.themoviedb.org/3/discover/movie?with_genres=28&sort_by=vote_average.desc&vote_count.gte=10&api_key=c4ecdfbf483df6da50ee828803c75746";
+    private static final String actionURL= "https://api.themoviedb.org/3/discover/movie?with_genres=28&sort_by=vote_average.desc&vote_count.gte=10&api_key=c4ecdfbf483df6da50ee828803c75746";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        listView=(ListView)findViewById(R.id.movie_list);
+
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
 
         requestData(actionURL);
 
-        listView=(ListView)findViewById(R.id.movie_list);
+        intent = new Intent(MainActivity.this,MovieDetails.class);
+
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(MainActivity.this,MovieDetails.class));
-                positionInList=position;
 
+                intent.putExtra("MY_MOVIE_OBJECT",(Movie)adapter.getItem(position));
+                intent.putExtra("BITMAP",((Movie) adapter.getItem(position)).getBitmap());
+
+                startActivity(intent);
             }
         });
     }
@@ -65,30 +72,10 @@ public class MainActivity extends AppCompatActivity {
         }
         else
         {
-            Toast.makeText(getBaseContext(),"Network isnt available",Toast.LENGTH_LONG).show();
+            Toast.makeText(getBaseContext(),"Network isn't available",Toast.LENGTH_LONG).show();
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    private void requestData(String uri) {
-        MyTask task= new MyTask();
-        task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,uri);
-    }
-
-    protected void updateDisplay() {
-        adapter=new MyArrayAdapter(this,movieList);
-
-        if (movieList != null) {
-
-            listView.setAdapter(adapter);
-            }
-    }
-
-    protected boolean isOnLine(){
-        ConnectivityManager cm =(ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo netInfo=cm.getActiveNetworkInfo();
-        return netInfo != null && netInfo.isConnectedOrConnecting();
     }
 
     private class MyTask extends AsyncTask<String,String,String>{
@@ -106,9 +93,31 @@ public class MainActivity extends AppCompatActivity {
 
             updateDisplay();
         }
+    }
 
 
-    } private void MatchLinks(int id) {
+
+
+    private void requestData(String uri) {
+        MyTask task= new MyTask();
+        task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,uri);
+    }
+
+    protected void updateDisplay() {
+
+        adapter = new MyArrayAdapter(this,movieList);
+            listView.setAdapter(adapter);
+
+    }
+
+    protected boolean isOnLine(){
+        ConnectivityManager cm =(ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo=cm.getActiveNetworkInfo();
+        return netInfo != null && netInfo.isConnectedOrConnecting();
+    }
+
+
+    private void MatchLinks(int id) {
         switch (id){
 
 

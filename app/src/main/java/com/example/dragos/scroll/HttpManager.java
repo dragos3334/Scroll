@@ -21,7 +21,6 @@ class HttpManager {
 
             con = (HttpURLConnection)url.openConnection();
 
-
             StringBuilder sb = new StringBuilder();
             reader= new BufferedReader(new InputStreamReader(con.getInputStream()));
 
