@@ -31,8 +31,6 @@ public class MovieJSONParser {
 
                 movie.setTitle(obj.getString("title"));
                 movie.setMovieID(obj.getInt("id"));
-                movie.setGenre(obj.getJSONArray("genre_ids"));
-                movie.setVoteCount(obj.getInt("vote_count"));
                 movie.setVoteAverage(obj.getDouble("vote_average"));
                 movie.setDescription(obj.getString("overview"));
                 movie.setPicture(obj.getString("poster_path"));

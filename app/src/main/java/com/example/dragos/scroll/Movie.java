@@ -15,8 +15,6 @@ public class Movie implements Parcelable {
 
     private String Title;
     private int MovieID;
-    private JSONArray Genre;
-    private int VoteCount;
     private double VoteAverage;
     private String Description;
     private String Picture;
@@ -37,22 +35,6 @@ public class Movie implements Parcelable {
 
     public void setTitle(String title) {
         Title = title;
-    }
-
-    public JSONArray getGenre() {
-        return Genre;
-    }
-
-    public void setGenre(JSONArray genre) {
-        Genre = genre;
-    }
-
-    public int getVoteCount() {
-        return VoteCount;
-    }
-
-    public void setVoteCount(int voteCount) {
-        VoteCount = voteCount;
     }
 
     public double getVoteAverage() {
