@@ -1,4 +1,4 @@
-package com.example.dragos.scroll;
+package com.movie.dragos.scroll;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
@@ -83,7 +83,7 @@ public class MyArrayAdapter extends ArrayAdapter<Movie> {
             Movie movie= container.movie;
 
             try {
-                String imageUrl= MainActivity.IMAGE_URL + movie.getPicture()+ MainActivity.API_KEY ;
+                String imageUrl= MainActivity.IMAGE_URL + movie.getPicture();
                 InputStream in= (InputStream) new URL(imageUrl).getContent();
                 Bitmap bitmap= BitmapFactory.decodeStream(in);
                 movie.setBitmap(bitmap);

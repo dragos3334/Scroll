@@ -5,7 +5,7 @@
     android:id="@+id/activity_movie_details"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.dragos.scroll.MovieDetails">
+    tools:context="com.movie.dragos.scroll.MovieDetails">
 
     <RelativeLayout
         android:layout_width="match_parent"

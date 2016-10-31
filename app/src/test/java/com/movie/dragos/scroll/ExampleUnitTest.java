@@ -1,4 +1,4 @@
-package com.example.dragos.scroll;
+package com.movie.dragos.scroll;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.example.dragos.scroll;
+package com.movie.dragos.scroll;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

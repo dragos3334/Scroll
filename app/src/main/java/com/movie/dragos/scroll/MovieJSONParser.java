@@ -1,15 +1,12 @@
-package com.example.dragos.scroll;
+package com.movie.dragos.scroll;
 
 
-
-import com.example.dragos.scroll.Movie;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class MovieJSONParser {

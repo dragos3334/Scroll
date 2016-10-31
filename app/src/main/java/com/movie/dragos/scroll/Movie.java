@@ -1,11 +1,8 @@
-package com.example.dragos.scroll;
+package com.movie.dragos.scroll;
 
 import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.widget.ProgressBar;
-
-import org.json.JSONArray;
 
 /**
  * Created by Dragos on 2016-09-23.

@@ -1,16 +1,11 @@
-package com.example.dragos.scroll;
+package com.movie.dragos.scroll;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
-
-import java.util.List;
 
 public class MovieDetails extends AppCompatActivity {
 
